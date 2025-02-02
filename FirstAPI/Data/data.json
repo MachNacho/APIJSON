@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Reading",
+    "description": "Reading is a great way to expand your knowledge and escape into different worlds.",
+    "image_src": "/images/reading.jpg"
+  },
+  {
+    "title": "Gardening",
+    "description": "Gardening is a relaxing hobby that allows you to connect with nature and grow your own plants.",
+    "image_src": "/images/gardening.jpg"
+  },
+  {
+    "title": "Cooking",
+    "description": "Cooking is a creative hobby that lets you experiment with different ingredients and flavors.",
+    "image_src": "/images/cooking.jpg"
+  },
+  {
+    "title": "Motorsports",
+    "description": "I enjoy watching cars go in circles really fast.",
+    "image_src": "/images/motorsports.jpg"
+  },
+  {
+    "title": "string",
+    "description": "string",
+    "image_src": "string"
+  }
+]
