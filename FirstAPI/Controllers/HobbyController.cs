@@ -23,11 +23,22 @@ namespace FirstAPI.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] Hobby hobby)
         {
-            var products = _fileHandler.ReadProductsFromFile();
+            var hob = _fileHandler.ReadProductsFromFile();
+            int nextId = hob.Any() ? hob.Max(p => p.ID) + 1 : 1;
+            hobby.ID = nextId;
+            hob.Add(hobby);
+            _fileHandler.WriteProductsToFile(hob);
 
-            products.Add(hobby);
-            _fileHandler.WriteProductsToFile(products);
-
+            return Ok();
+        }
+        [HttpDelete("{ID}")]
+        public IActionResult Delete(int ID)
+        {
+            var hob = _fileHandler.ReadProductsFromFile();
+            var hobby = hob.Find(p => p.ID == ID);
+            if (hobby == null) return NotFound();
+            hob.Remove(hobby);
+            _fileHandler.WriteProductsToFile(hob);
             return Ok();
         }
     }

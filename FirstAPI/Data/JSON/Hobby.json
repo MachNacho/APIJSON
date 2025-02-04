@@ -1,6 +1,6 @@
 [
   {
-    "ID" :  0,
+    "ID": 0,
     "Title": "Reading",
     "Description": "Reading is a great way to expand your knowledge and escape into different worlds.",
     "ImageSrc": "/images/reading.jpg"
@@ -19,7 +19,7 @@
   },
   {
     "ID": 3,
-    "title": "Motorsports",
+    "Title": "Motorsports",
     "Description": "I enjoy watching cars go in circles really fast.",
     "ImageSrc": "/images/motorsports.jpg"
   }
