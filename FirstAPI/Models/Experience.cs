@@ -1,6 +1,6 @@
 ﻿namespace FirstAPI.Models
 {
-    public class Experince
+    public class Experience
     {
         public string? Role { get; set; }
         public string? Organisation { get; set; }

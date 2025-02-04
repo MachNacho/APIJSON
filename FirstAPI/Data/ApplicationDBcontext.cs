@@ -1,15 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FirstAPI.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace FirstAPI.Data
+/// <summary>
+/// Represents the application's database context, managing entity configurations and database operations.
+/// Inherits from <see cref="DbContext"/> to enable Entity Framework Core functionality.
+/// </summary>
+public class ApplicationDBContext : DbContext
 {
-    public class ApplicationDBcontext: DbContext // Inherit DbContext
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ApplicationDBContext"/> class.
+    /// </summary>
+    /// <param name="dbContextOptions">The database context options used to configure the context.</param>
+    public ApplicationDBContext(DbContextOptions<ApplicationDBContext> dbContextOptions)
+        : base(dbContextOptions)
     {
-        public ApplicationDBcontext(DbContextOptions dbContextOptions):base(dbContextOptions) { }// Constructor
-        public DbSet<User> user {  get; set; } // Table
     }
+
+    /// <summary>
+    /// DbSet properties represent tables in the database.
+    /// Add entities as needed.
+    /// </summary>
+    // public DbSet<MyEntity> MyEntities { get; set; }
 }

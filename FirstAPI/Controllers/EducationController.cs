@@ -7,22 +7,17 @@ namespace FirstAPI.Controllers
     [ApiController] // Bring in apicontroller
     public class EducationController : ControllerBase
     {
-        private readonly FileHandler<Hobby> _fileHandler;
-        private readonly string filepath = "Data/JSON/Hobby.json";
+        private readonly FileHandler<Education> _fileHandler;
+        private readonly string filepath = "Data/JSON/Education.json";
         public EducationController()
         {
-            _fileHandler = new FileHandler<Hobby>(filepath);
+            _fileHandler = new FileHandler<Education>(filepath);
         }
 
         [HttpGet] // Get request
         public IActionResult GetAll()
         {
-            return Ok();
-        }
-        [HttpPost]
-        public IActionResult Create()
-        {
-            return Ok();
+            return Ok(_fileHandler.ReadProductsFromFile());
         }
     }
 }
