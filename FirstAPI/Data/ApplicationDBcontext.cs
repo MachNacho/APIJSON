@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FirstAPI.Data
 {
-    public class ApplicationDBcontext: DbContext
+    public class ApplicationDBcontext: DbContext // Inherit DbContext
     {
-        public ApplicationDBcontext(DbContextOptions dbContextOptions):base(dbContextOptions) { }//Pass up to Db context
-        public DbSet<User> user {  get; set; }// set table
+        public ApplicationDBcontext(DbContextOptions dbContextOptions):base(dbContextOptions) { }// Constructor
+        public DbSet<User> user {  get; set; } // Table
     }
 }
