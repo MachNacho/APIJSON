@@ -1,28 +1,30 @@
 [
-  {
-    "Degree": "Bachelor of Science in Information Technology (Software engineering)",
-    "Institution": "Eduvos",
-    "StartDate": "Feb, 2022",
-    "EndDate": "Dec, 2024",
-    "Grade": "3.9/4.0 GPA",
-    "Description": [
-      "Specialized in Software Development",
-      "Completed coursework in Algorithms, Principles, and Databases",
-      "Participated team project to create a mobile app for campus quiz"
-    ],
-    "ImageSrc": "/images/Eduvos.png"
-  },
-  {
-    "Degree": "Matric",
-    "Institution": "Teneo",
-    "StartDate": "Jan, 2017",
-    "EndDate": "Dec, 2021",
-    "Grade": "Graduated with Bacholers",
-    "Description": [
-      "Member of the 3D printing",
-      "Gold national computer olympiad",
-      "Top athlete"
-    ],
-    "ImageSrc": "/images/Teneo.png"
-  }
+    {
+        "ID": 0,
+        "Degree": "Bachelor of Science in Information Technology (Software engineering)",
+        "Institution": "Eduvos",
+        "StartDate": "Feb, 2022",
+        "EndDate": "Dec, 2024",
+        "Grade": "3.9/4.0 GPA",
+        "Description": [
+            "Specialized in Software Development",
+            "Completed coursework in Algorithms, Principles, and Databases",
+            "Participated team project to create a mobile app for campus quiz"
+        ],
+        "ImageSrc": "/images/Eduvos.png"
+    },
+    {
+        "ID": 1,
+        "Degree": "Matric",
+        "Institution": "Teneo",
+        "StartDate": "Jan, 2017",
+        "EndDate": "Dec, 2021",
+        "Grade": "Graduated with Bacholers",
+        "Description": [
+            "Member of the 3D printing",
+            "Gold national computer olympiad",
+            "Top athlete"
+        ],
+        "ImageSrc": "/images/Teneo.png"
+    }
 ]

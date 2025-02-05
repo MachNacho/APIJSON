@@ -19,5 +19,26 @@ namespace FirstAPI.Controllers
         {
             return Ok(_fileHandler.ReadProductsFromFile());
         }
+        [HttpPost]
+        public IActionResult Create([FromBody] Education education)
+        {
+            var EducationList = _fileHandler.ReadProductsFromFile();
+            int nextId = EducationList.Any() ? EducationList.Max(p => p.ID) + 1 : 1;
+            education.ID = nextId;
+            EducationList.Add(education);
+            _fileHandler.WriteProductsToFile(EducationList);
+
+            return Ok();
+        }
+        [HttpDelete("{ID}")]
+        public IActionResult Delete(int ID)
+        {
+            var EducationList = _fileHandler.ReadProductsFromFile();
+            var education = EducationList.Find(p => p.ID == ID);
+            if (education == null) return NotFound();
+            EducationList.Remove(education);
+            _fileHandler.WriteProductsToFile(EducationList);
+            return Ok();
+        }
     }
 }

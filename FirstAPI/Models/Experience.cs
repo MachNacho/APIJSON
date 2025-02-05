@@ -2,6 +2,7 @@
 {
     public class Experience
     {
+        public int ID { get; set; }
         public string? Role { get; set; }
         public string? Organisation { get; set; }
         public DateOnly StartDate { get; set; }
