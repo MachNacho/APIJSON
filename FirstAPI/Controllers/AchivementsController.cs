@@ -1,5 +1,4 @@
 ﻿using FirstAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FirstAPI.Controllers
@@ -18,6 +17,13 @@ namespace FirstAPI.Controllers
         public IActionResult GetAll()
         {
             return Ok(_fileHandler.ReadProductsFromFile());
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetByID(int id) {
+            var achivementsList = _fileHandler.ReadProductsFromFile();
+            var achivement = achivementsList.Find(p => p.ID == id);
+            if (achivement == null) return NotFound();
+            return Ok(achivement);
         }
         [HttpPost]
         public IActionResult Create([FromBody] Achivement Ach)

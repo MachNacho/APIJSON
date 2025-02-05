@@ -1,5 +1,4 @@
 ﻿using FirstAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FirstAPI.Controllers
@@ -13,6 +12,14 @@ namespace FirstAPI.Controllers
         public ExperienceController()
         {
             _fileHandler = new FileHandler<Experience>(filepath);
+        }
+        [HttpGet("{ID}")]
+        public IActionResult GetByID(int ID)
+        {
+            var achivementsList = _fileHandler.ReadProductsFromFile();
+            var hobby = achivementsList.Find(p => p.ID == ID);
+            if (hobby == null) return NotFound();
+            return Ok(hobby);
         }
         [HttpGet]
         public IActionResult GetAll()

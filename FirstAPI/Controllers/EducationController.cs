@@ -19,6 +19,13 @@ namespace FirstAPI.Controllers
         {
             return Ok(_fileHandler.ReadProductsFromFile());
         }
+        [HttpGet("{id}")]
+        public IActionResult GetByID(int id) {
+            var EducationList = _fileHandler.ReadProductsFromFile();
+            var education = EducationList.Find(p => p.ID == id);
+            if (education == null) return NotFound();
+            return Ok(education);
+        }
         [HttpPost]
         public IActionResult Create([FromBody] Education education)
         {

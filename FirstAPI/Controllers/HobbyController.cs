@@ -19,7 +19,14 @@ namespace FirstAPI.Controllers
         {
             return Ok(_fileHandler.ReadProductsFromFile());
         }
-
+        [HttpGet("{ID}")]
+        public IActionResult GetByID(int ID)
+        {
+            var hob = _fileHandler.ReadProductsFromFile();
+            var hobby = hob.Find(p => p.ID == ID);
+            if (hobby == null) return NotFound();
+            return Ok(hobby);
+        }
         [HttpPost]
         public IActionResult Create([FromBody] Hobby hobby)
         {

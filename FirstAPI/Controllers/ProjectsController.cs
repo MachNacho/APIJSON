@@ -18,6 +18,14 @@ namespace FirstAPI.Controllers
         {
             return Ok(_fileHandler.ReadProductsFromFile());
         }
+        [HttpGet("{ID}")]
+        public IActionResult GetByID(int ID)
+        {
+            var projectList = _fileHandler.ReadProductsFromFile();
+            var project = projectList.Find(p => p.ID == ID);
+            if (project == null) return NotFound();
+            return Ok(project);
+        }
         [HttpPost]
         public IActionResult Create([FromBody] Project project)
         {

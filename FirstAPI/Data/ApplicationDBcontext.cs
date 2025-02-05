@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FirstAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 /// <summary>
 /// Represents the application's database context, managing entity configurations and database operations.
@@ -19,5 +20,9 @@ public class ApplicationDBContext : DbContext
     /// DbSet properties represent tables in the database.
     /// Add entities as needed.
     /// </summary>
-    // public DbSet<MyEntity> MyEntities { get; set; }
+     public DbSet<Achivement> achivements { get; set; }
+     public DbSet<Education> educations { get; set; }
+     public DbSet<Experience> experiences { get; set; }
+     public DbSet<Hobby> hobbies { get; set; }
+     public DbSet<Project>  projects{ get; set; }
 }
