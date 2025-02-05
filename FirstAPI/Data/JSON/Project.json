@@ -1,45 +1,42 @@
 [
-    {
-        "ID": 0,
-        "Name": "Portfolio Website",
-        "Link": "https://myportfolio.com",
-        "Tags": [
-            "React",
-            "TypeScript",
-            "CSS",
-            "Firebase"
-        ],
-        "Date": "2025-01-01",
-        "Description": "A personal portfolio website to showcase my work, skills, and projects.",
-        "ImageSrc": "/images/port.jpg"
-    },
-    {
-        "ID": 1,
-        "Name": "E-Commerce Platform",
-        "Link": "https://myecommerce.com",
-        "Tags": [
-            "Node.js",
-            "Express",
-            "MongoDB",
-            "React",
-            "Stripe"
-        ],
-        "Date": "2024-11-01",
-        "Description": "Developed a scalable e-commerce platform featuring a product catalog, shopping cart, and payment integration.",
-        "ImageSrc": "/images/ecom.jpg"
-    },
-    {
-        "ID": 2,
-        "Name": "Weather App",
-        "Link": "https://weatherapp.com",
-        "Tags": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "OpenWeather API"
-        ],
-        "Date": "2024-08-01",
-        "Description": "A web app that fetches and displays real-time weather data using a public API.",
-        "ImageSrc": "/images/Waetherapp.jpg"
-    }
+  {
+    "ID": 1,
+    "Name": "E-Commerce Platform",
+    "Link": "https://myecommerce.com",
+    "Tags": [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "React",
+      "Stripe"
+    ],
+    "Date": "2024-11-01",
+    "Description": "Developed a scalable e-commerce platform featuring a product catalog, shopping cart, and payment integration.",
+    "ImageSrc": "/images/ecom.jpg"
+  },
+  {
+    "ID": 2,
+    "Name": "Weather App",
+    "Link": "https://weatherapp.com",
+    "Tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "OpenWeather API"
+    ],
+    "Date": "2024-08-01",
+    "Description": "A web app that fetches and displays real-time weather data using a public API.",
+    "ImageSrc": "/images/Waetherapp.jpg"
+  },
+  {
+    "ID": 3,
+    "Name": "string",
+    "Link": "string",
+    "Tags": [
+      "string"
+    ],
+    "Date": "2025-02-05",
+    "Description": "string",
+    "ImageSrc": "string"
+  }
 ]

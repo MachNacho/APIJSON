@@ -13,19 +13,22 @@ namespace FirstAPI.Controllers
         {
             _fileHandler = new FileHandler<Project>(filepath);
         }
+
         [HttpGet]
         public IActionResult GetAll()
         {
             return Ok(_fileHandler.ReadProductsFromFile());
         }
-        [HttpGet("{ID}")]
-        public IActionResult GetByID(int ID)
+
+        [HttpGet("{tag}")]
+        public IActionResult GetByID(string tag)
         {
             var projectList = _fileHandler.ReadProductsFromFile();
-            var project = projectList.Find(p => p.ID == ID);
+            var project = projectList.Where(p => p.Tags.Contains(tag)).ToList();
             if (project == null) return NotFound();
             return Ok(project);
         }
+
         [HttpPost]
         public IActionResult Create([FromBody] Project project)
         {
@@ -37,6 +40,7 @@ namespace FirstAPI.Controllers
 
             return Ok();
         }
+
         [HttpDelete("{ID}")]
         public IActionResult Delete(int ID)
         {
