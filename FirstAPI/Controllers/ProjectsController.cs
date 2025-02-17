@@ -8,48 +8,18 @@ namespace FirstAPI.Controllers
     public class ProjectsController : ControllerBase
     {
         private readonly FileHandler<Project> _fileHandler;
+        private readonly ApplicationDBContext _context;
         private readonly string filepath = "Data/JSON/Project.json";
-        public ProjectsController()
+        public ProjectsController(ApplicationDBContext context)
         {
             _fileHandler = new FileHandler<Project>(filepath);
+            _context = context;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Ok(_fileHandler.ReadProductsFromFile());
-        }
-
-        [HttpGet("{tag}")]
-        public IActionResult GetByID(string tag)
-        {
-            var projectList = _fileHandler.ReadProductsFromFile();
-            var project = projectList.Where(p => p.Tags.Contains(tag)).ToList();
-            if (project == null) return NotFound();
-            return Ok(project);
-        }
-
-        [HttpPost]
-        public IActionResult Create([FromBody] Project project)
-        {
-            var projectList = _fileHandler.ReadProductsFromFile();
-            int nextId = projectList.Any() ? projectList.Max(p => p.ID) + 1 : 1;
-            project.ID = nextId;
-            projectList.Add(project);
-            _fileHandler.WriteProductsToFile(projectList);
-
-            return Ok();
-        }
-
-        [HttpDelete("{ID}")]
-        public IActionResult Delete(int ID)
-        {
-            var projectList = _fileHandler.ReadProductsFromFile();
-            var project = projectList.Find(p => p.ID == ID);
-            if (project == null) return NotFound();
-            projectList.Remove(project);
-            _fileHandler.WriteProductsToFile(projectList);
-            return Ok();
+            return Ok(_context.projects.ToList());
         }
     }
 }
